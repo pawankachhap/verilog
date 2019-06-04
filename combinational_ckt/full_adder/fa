@@ -1,0 +1,57 @@
+#! c:/iverilog-x64/bin/vvp
+:ivl_version "10.1 (stable)" "(v10_1_1)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0000000002862d60 .scope module, "full_adder" "full_adder" 2 5;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A"
+    .port_info 1 /INPUT 1 "B"
+    .port_info 2 /INPUT 1 "Z"
+    .port_info 3 /OUTPUT 1 "sum"
+    .port_info 4 /OUTPUT 1 "carr"
+L_00000000028f3f70 .functor OR 1, L_00000000028f3d90, L_00000000028f3f00, C4<0>, C4<0>;
+o0000000002898dc8 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000028f1450_0 .net "A", 0 0, o0000000002898dc8;  0 drivers
+o0000000002898df8 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000028f1e00_0 .net "B", 0 0, o0000000002898df8;  0 drivers
+o0000000002898f48 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000028f1540_0 .net "Z", 0 0, o0000000002898f48;  0 drivers
+v00000000028f1ea0_0 .net "c1", 0 0, L_00000000028f3d90;  1 drivers
+v00000000028f1c20_0 .net "c2", 0 0, L_00000000028f3f00;  1 drivers
+v00000000028f1720_0 .net "carr", 0 0, L_00000000028f3f70;  1 drivers
+v00000000028f1cc0_0 .net "s1", 0 0, L_00000000028f3d20;  1 drivers
+v00000000028f1680_0 .net "sum", 0 0, L_00000000028f3e00;  1 drivers
+S_0000000002862ee0 .scope module, "HA1" "half_adder" 2 17, 3 1 0, S_0000000002862d60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "x"
+    .port_info 1 /INPUT 1 "y"
+    .port_info 2 /OUTPUT 1 "sum"
+    .port_info 3 /OUTPUT 1 "carry"
+L_00000000028f3d20 .functor XOR 1, o0000000002898dc8, o0000000002898df8, C4<0>, C4<0>;
+L_00000000028f3d90 .functor AND 1, o0000000002898dc8, o0000000002898df8, C4<1>, C4<1>;
+v0000000002863060_0 .net "carry", 0 0, L_00000000028f3d90;  alias, 1 drivers
+v00000000028f0e70_0 .net "sum", 0 0, L_00000000028f3d20;  alias, 1 drivers
+v00000000028f0f10_0 .net "x", 0 0, o0000000002898dc8;  alias, 0 drivers
+v00000000028f0fb0_0 .net "y", 0 0, o0000000002898df8;  alias, 0 drivers
+S_00000000028f1050 .scope module, "HA2" "half_adder" 2 18, 3 1 0, S_0000000002862d60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "x"
+    .port_info 1 /INPUT 1 "y"
+    .port_info 2 /OUTPUT 1 "sum"
+    .port_info 3 /OUTPUT 1 "carry"
+L_00000000028f3e00 .functor XOR 1, L_00000000028f3d20, o0000000002898f48, C4<0>, C4<0>;
+L_00000000028f3f00 .functor AND 1, L_00000000028f3d20, o0000000002898f48, C4<1>, C4<1>;
+v00000000028f11d0_0 .net "carry", 0 0, L_00000000028f3f00;  alias, 1 drivers
+v00000000028f1270_0 .net "sum", 0 0, L_00000000028f3e00;  alias, 1 drivers
+v00000000028f1310_0 .net "x", 0 0, L_00000000028f3d20;  alias, 1 drivers
+v00000000028f13b0_0 .net "y", 0 0, o0000000002898f48;  alias, 0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "full_adder.v";
+    "./half_adder.v";
