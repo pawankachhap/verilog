@@ -1,0 +1,230 @@
+$date
+	Thu Jun 06 13:58:12 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module adder4bit_tb $end
+$var wire 4 ! sum [3:0] $end
+$var wire 1 " carry $end
+$var reg 4 # A [3:0] $end
+$var reg 4 $ B [3:0] $end
+$var reg 1 % Cin $end
+$scope module DUT $end
+$var wire 4 & A [3:0] $end
+$var wire 4 ' B [3:0] $end
+$var wire 1 % Cin $end
+$var wire 4 ( sum [3:0] $end
+$var wire 1 " carry $end
+$var wire 1 ) C3 $end
+$var wire 1 * C2 $end
+$var wire 1 + C1 $end
+$scope module fa1 $end
+$var wire 1 , A $end
+$var wire 1 - B $end
+$var wire 1 % Z $end
+$var wire 1 + carr $end
+$var wire 1 . sum $end
+$var wire 1 / s1 $end
+$var wire 1 0 c2 $end
+$var wire 1 1 c1 $end
+$scope module HA1 $end
+$var wire 1 1 carry $end
+$var wire 1 / sum $end
+$var wire 1 , x $end
+$var wire 1 - y $end
+$upscope $end
+$scope module HA2 $end
+$var wire 1 0 carry $end
+$var wire 1 . sum $end
+$var wire 1 / x $end
+$var wire 1 % y $end
+$upscope $end
+$upscope $end
+$scope module fa2 $end
+$var wire 1 2 A $end
+$var wire 1 3 B $end
+$var wire 1 + Z $end
+$var wire 1 * carr $end
+$var wire 1 4 sum $end
+$var wire 1 5 s1 $end
+$var wire 1 6 c2 $end
+$var wire 1 7 c1 $end
+$scope module HA1 $end
+$var wire 1 7 carry $end
+$var wire 1 5 sum $end
+$var wire 1 2 x $end
+$var wire 1 3 y $end
+$upscope $end
+$scope module HA2 $end
+$var wire 1 6 carry $end
+$var wire 1 4 sum $end
+$var wire 1 5 x $end
+$var wire 1 + y $end
+$upscope $end
+$upscope $end
+$scope module fa3 $end
+$var wire 1 8 A $end
+$var wire 1 9 B $end
+$var wire 1 * Z $end
+$var wire 1 ) carr $end
+$var wire 1 : sum $end
+$var wire 1 ; s1 $end
+$var wire 1 < c2 $end
+$var wire 1 = c1 $end
+$scope module HA1 $end
+$var wire 1 = carry $end
+$var wire 1 ; sum $end
+$var wire 1 8 x $end
+$var wire 1 9 y $end
+$upscope $end
+$scope module HA2 $end
+$var wire 1 < carry $end
+$var wire 1 : sum $end
+$var wire 1 ; x $end
+$var wire 1 * y $end
+$upscope $end
+$upscope $end
+$scope module fa4 $end
+$var wire 1 > A $end
+$var wire 1 ? B $end
+$var wire 1 ) Z $end
+$var wire 1 " carr $end
+$var wire 1 @ sum $end
+$var wire 1 A s1 $end
+$var wire 1 B c2 $end
+$var wire 1 C c1 $end
+$scope module HA1 $end
+$var wire 1 C carry $end
+$var wire 1 A sum $end
+$var wire 1 > x $end
+$var wire 1 ? y $end
+$upscope $end
+$scope module HA2 $end
+$var wire 1 B carry $end
+$var wire 1 @ sum $end
+$var wire 1 A x $end
+$var wire 1 ) y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0C
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+14
+03
+02
+11
+00
+0/
+0.
+1-
+1,
+1+
+0*
+0)
+b10 (
+b1 '
+b1 &
+0%
+b1 $
+b1 #
+0"
+b10 !
+$end
+#10
+04
+b100 !
+b100 (
+1:
+0+
+1*
+01
+17
+0-
+13
+0,
+12
+b10 $
+b10 '
+b10 #
+b10 &
+#20
+0@
+0)
+1.
+14
+0*
+b111 !
+b111 (
+1:
+0<
+1/
+15
+07
+1;
+1-
+02
+18
+b11 $
+b11 '
+b100 #
+b100 &
+#30
+04
+b1101 !
+b1101 (
+1@
+05
+1A
+0-
+03
+19
+1,
+08
+1>
+b100 $
+b100 '
+b1001 #
+b1001 &
+#40
+1"
+14
+0@
+1B
+0.
+1+
+b10 !
+b10 (
+0:
+1)
+0/
+11
+0;
+1=
+1-
+18
+b101 $
+b101 '
+b1101 #
+b1101 &
+#50
