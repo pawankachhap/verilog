@@ -1,0 +1,34 @@
+#! c:/iverilog-x64/bin/vvp
+:ivl_version "10.1 (stable)" "(v10_1_1)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0000000000cf2d20 .scope module, "mux2to1" "mux2to1" 2 2;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "Y"
+    .port_info 1 /INPUT 2 "X"
+    .port_info 2 /INPUT 1 "sel"
+L_0000000000e4eeb0 .functor AND 1, L_0000000000e4ef20, L_0000000000d7d430, C4<1>, C4<1>;
+o0000000000d25068 .functor BUFZ 1, C4<z>; HiZ drive
+L_0000000000d7d430 .functor NOT 1, o0000000000d25068, C4<0>, C4<0>, C4<0>;
+L_0000000000d7d4a0 .functor AND 1, L_0000000000d7d510, o0000000000d25068, C4<1>, C4<1>;
+L_0000000000d7d5b0 .functor OR 1, L_0000000000e4eeb0, L_0000000000d7d4a0, C4<0>, C4<0>;
+o0000000000d24f18 .functor BUFZ 2, C4<zz>; HiZ drive
+v0000000000cf2ea0_0 .net "X", 1 0, o0000000000d24f18;  0 drivers
+v0000000000cf2f40_0 .net "Y", 0 0, L_0000000000d7d5b0;  1 drivers
+v0000000000cf2fe0_0 .net *"_s1", 0 0, L_0000000000e4ef20;  1 drivers
+v0000000000cf3080_0 .net *"_s2", 0 0, L_0000000000d7d430;  1 drivers
+v0000000000e4ec30_0 .net *"_s5", 0 0, L_0000000000d7d510;  1 drivers
+v0000000000e4ecd0_0 .net "k1", 0 0, L_0000000000e4eeb0;  1 drivers
+v0000000000e4ed70_0 .net "k2", 0 0, L_0000000000d7d4a0;  1 drivers
+v0000000000e4ee10_0 .net "sel", 0 0, o0000000000d25068;  0 drivers
+L_0000000000e4ef20 .part o0000000000d24f18, 0, 1;
+L_0000000000d7d510 .part o0000000000d24f18, 1, 1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "mux2to1.v";
