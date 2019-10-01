@@ -1,0 +1,41 @@
+$date
+	Tue Oct 01 20:32:53 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module bin2gray_tb $end
+$var wire 8 ! gray [7:0] $end
+$var reg 8 " bin [7:0] $end
+$scope module DUT $end
+$var wire 8 # bin [7:0] $end
+$var wire 8 $ gray [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1110111 $
+b1010101 #
+b1010101 "
+b1110111 !
+$end
+#50
+b110110 !
+b110110 $
+b100100 "
+b100100 #
+#100
+b10111011 !
+b10111011 $
+b11011101 "
+b11011101 #
+#150
+b11011 !
+b11011 $
+b11101 "
+b11101 #
+#200

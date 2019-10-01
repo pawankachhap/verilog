@@ -1,0 +1,86 @@
+#! c:/iverilog-x64/bin/vvp
+:ivl_version "10.1 (stable)" "(v10_1_1)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 10;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_00000000008deb50 .scope module, "bin2gray_tb" "bin2gray_tb" 2 7;
+ .timescale -9 -10;
+v00000000028b92f0_0 .var "bin", 7 0;
+v00000000028b96b0_0 .net "gray", 7 0, L_00000000028ba830;  1 drivers
+S_00000000008decd0 .scope module, "DUT" "bin2gray" 2 12, 3 5 0, S_00000000008deb50;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 8 "gray"
+    .port_info 1 /INPUT 8 "bin"
+L_0000000002823ad0 .functor XOR 1, L_00000000028ba5b0, L_00000000028ba970, C4<0>, C4<0>;
+L_000000000285e730 .functor XOR 1, L_00000000028ba330, L_00000000028b9250, C4<0>, C4<0>;
+L_00000000028585b0 .functor XOR 1, L_00000000028ba1f0, L_00000000028ba470, C4<0>, C4<0>;
+L_0000000002859610 .functor XOR 1, L_00000000028ba3d0, L_00000000028b9930, C4<0>, C4<0>;
+L_0000000002859df0 .functor XOR 1, L_00000000028ba290, L_00000000028ba650, C4<0>, C4<0>;
+L_0000000002858140 .functor XOR 1, L_00000000028ba8d0, L_00000000028b9a70, C4<0>, C4<0>;
+v000000000285c4b0_0 .net *"_s10", 0 0, L_000000000285e730;  1 drivers
+v000000000285c550_0 .net *"_s13", 0 0, L_00000000028ba330;  1 drivers
+v000000000285caf0_0 .net *"_s15", 0 0, L_00000000028b9250;  1 drivers
+v000000000285c5f0_0 .net *"_s16", 0 0, L_00000000028585b0;  1 drivers
+v000000000285c690_0 .net *"_s19", 0 0, L_00000000028ba1f0;  1 drivers
+v000000000285cff0_0 .net *"_s21", 0 0, L_00000000028ba470;  1 drivers
+v000000000285c730_0 .net *"_s25", 0 0, L_00000000028ba510;  1 drivers
+v000000000285cf50_0 .net *"_s26", 0 0, L_0000000002859610;  1 drivers
+v000000000285c910_0 .net *"_s29", 0 0, L_00000000028ba3d0;  1 drivers
+v000000000285ceb0_0 .net *"_s3", 0 0, L_00000000028b9e30;  1 drivers
+v000000000285cb90_0 .net *"_s31", 0 0, L_00000000028b9930;  1 drivers
+v000000000285ccd0_0 .net *"_s32", 0 0, L_0000000002859df0;  1 drivers
+v000000000285cd70_0 .net *"_s35", 0 0, L_00000000028ba290;  1 drivers
+v000000000285ce10_0 .net *"_s37", 0 0, L_00000000028ba650;  1 drivers
+v000000000285c7d0_0 .net *"_s38", 0 0, L_0000000002858140;  1 drivers
+v00000000028ba790_0 .net *"_s4", 0 0, L_0000000002823ad0;  1 drivers
+v00000000028b8cb0_0 .net *"_s42", 0 0, L_00000000028ba8d0;  1 drivers
+v00000000028ba010_0 .net *"_s44", 0 0, L_00000000028b9a70;  1 drivers
+v00000000028ba6f0_0 .net *"_s7", 0 0, L_00000000028ba5b0;  1 drivers
+v00000000028ba150_0 .net *"_s9", 0 0, L_00000000028ba970;  1 drivers
+v00000000028ba0b0_0 .net "bin", 7 0, v00000000028b92f0_0;  1 drivers
+v00000000028b9c50_0 .net "gray", 7 0, L_00000000028ba830;  alias, 1 drivers
+L_00000000028b9e30 .part v00000000028b92f0_0, 7, 1;
+L_00000000028ba5b0 .part v00000000028b92f0_0, 7, 1;
+L_00000000028ba970 .part v00000000028b92f0_0, 6, 1;
+L_00000000028ba330 .part v00000000028b92f0_0, 6, 1;
+L_00000000028b9250 .part v00000000028b92f0_0, 5, 1;
+L_00000000028ba1f0 .part v00000000028b92f0_0, 5, 1;
+L_00000000028ba470 .part v00000000028b92f0_0, 4, 1;
+L_00000000028ba510 .part v00000000028b92f0_0, 3, 1;
+L_00000000028ba3d0 .part v00000000028b92f0_0, 3, 1;
+L_00000000028b9930 .part v00000000028b92f0_0, 2, 1;
+L_00000000028ba290 .part v00000000028b92f0_0, 2, 1;
+L_00000000028ba650 .part v00000000028b92f0_0, 1, 1;
+LS_00000000028ba830_0_0 .concat8 [ 1 1 1 1], L_0000000002858140, L_0000000002859df0, L_0000000002859610, L_00000000028ba510;
+LS_00000000028ba830_0_4 .concat8 [ 1 1 1 1], L_00000000028585b0, L_000000000285e730, L_0000000002823ad0, L_00000000028b9e30;
+L_00000000028ba830 .concat8 [ 4 4 0 0], LS_00000000028ba830_0_0, LS_00000000028ba830_0_4;
+L_00000000028ba8d0 .part v00000000028b92f0_0, 1, 1;
+L_00000000028b9a70 .part v00000000028b92f0_0, 0, 1;
+    .scope S_00000000008deb50;
+T_0 ;
+    %vpi_call 2 16 "$dumpfile", "plot.vcd" {0 0 0};
+    %vpi_call 2 17 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000000008deb50 {0 0 0};
+    %pushi/vec4 85, 0, 8;
+    %store/vec4 v00000000028b92f0_0, 0, 8;
+    %delay 50, 0;
+    %pushi/vec4 36, 0, 8;
+    %store/vec4 v00000000028b92f0_0, 0, 8;
+    %delay 50, 0;
+    %pushi/vec4 221, 0, 8;
+    %store/vec4 v00000000028b92f0_0, 0, 8;
+    %delay 50, 0;
+    %pushi/vec4 29, 0, 8;
+    %store/vec4 v00000000028b92f0_0, 0, 8;
+    %delay 50, 0;
+    %vpi_call 2 23 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "bin2gray_tb.v";
+    "./bin2gray.v";
