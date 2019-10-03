@@ -1,0 +1,412 @@
+$date
+	Thu Oct 03 18:11:28 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	10ps
+$end
+$scope module test $end
+$var wire 1 ! stop $end
+$var wire 1 " sftQ $end
+$var wire 1 # sftA $end
+$var wire 16 $ result [15:0] $end
+$var wire 1 % qd $end
+$var wire 1 & q0 $end
+$var wire 1 ' ldcount $end
+$var wire 1 ( ldQ $end
+$var wire 1 ) ldM $end
+$var wire 1 * ldA $end
+$var wire 1 + done $end
+$var wire 1 , decount $end
+$var wire 1 - clrff $end
+$var wire 1 . clrQ $end
+$var wire 1 / clrA $end
+$var wire 1 0 addsub $end
+$var reg 1 1 clk $end
+$var reg 8 2 data_in [7:0] $end
+$var reg 1 3 start $end
+$scope module dut1 $end
+$var wire 1 1 clk $end
+$var wire 8 4 data_in [7:0] $end
+$var wire 1 ! stop $end
+$var wire 1 " sftQ $end
+$var wire 1 # sftA $end
+$var wire 1 % qd $end
+$var wire 1 & q0 $end
+$var wire 1 ' ldcount $end
+$var wire 1 ( ldQ $end
+$var wire 1 ) ldM $end
+$var wire 1 * ldA $end
+$var wire 1 , decount $end
+$var wire 4 5 count [3:0] $end
+$var wire 1 - clrff $end
+$var wire 1 . clrQ $end
+$var wire 1 / clrA $end
+$var wire 1 0 addsub $end
+$var wire 8 6 Z [7:0] $end
+$var wire 8 7 Q [7:0] $end
+$var wire 8 8 M [7:0] $end
+$var wire 8 9 A [7:0] $end
+$scope module AR $end
+$var wire 1 1 clk $end
+$var wire 1 : serial_in $end
+$var wire 1 # shift $end
+$var wire 1 * load $end
+$var wire 8 ; data_in [7:0] $end
+$var wire 1 / clear $end
+$var reg 8 < data_out [7:0] $end
+$upscope $end
+$scope module CR $end
+$var wire 1 1 clk $end
+$var wire 1 ' load $end
+$var wire 1 , dec $end
+$var reg 4 = count [3:0] $end
+$upscope $end
+$scope module DUT $end
+$var wire 8 > in1 [7:0] $end
+$var wire 8 ? in2 [7:0] $end
+$var wire 1 0 addsub $end
+$var reg 8 @ out [7:0] $end
+$upscope $end
+$scope module MR $end
+$var wire 1 1 clk $end
+$var wire 8 A data_in [7:0] $end
+$var wire 1 ) load $end
+$var reg 8 B data_out [7:0] $end
+$upscope $end
+$scope module QR $end
+$var wire 1 1 clk $end
+$var wire 8 C data_in [7:0] $end
+$var wire 1 D serial_in $end
+$var wire 1 " shift $end
+$var wire 1 ( load $end
+$var wire 1 . clear $end
+$var reg 8 E data_out [7:0] $end
+$upscope $end
+$scope module dff $end
+$var wire 1 1 clk $end
+$var wire 1 F d $end
+$var wire 1 - clr $end
+$var reg 1 % q $end
+$upscope $end
+$upscope $end
+$scope module dut2 $end
+$var wire 1 1 clk $end
+$var wire 1 & q0 $end
+$var wire 1 % qd $end
+$var wire 1 3 start $end
+$var wire 1 ! stop $end
+$var reg 1 0 addsub $end
+$var reg 1 / clrA $end
+$var reg 1 . clrQ $end
+$var reg 1 - clrff $end
+$var reg 1 , decount $end
+$var reg 1 + done $end
+$var reg 1 * ldA $end
+$var reg 1 ) ldM $end
+$var reg 1 ( ldQ $end
+$var reg 1 ' ldcount $end
+$var reg 1 # sftA $end
+$var reg 1 " sftQ $end
+$var reg 3 G state [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx G
+xF
+bx E
+xD
+bx C
+bx B
+bx A
+bx @
+bx ?
+bx >
+bx =
+bx <
+bx ;
+x:
+bx 9
+bx 8
+bx 7
+bx 6
+bx 5
+bx 4
+03
+bx 2
+01
+x0
+x/
+x.
+x-
+x,
+x+
+x*
+x)
+x(
+x'
+x&
+x%
+bx $
+x#
+x"
+x!
+$end
+#200
+13
+#500
+0+
+0-
+0)
+0"
+0.
+0(
+0#
+0/
+0*
+b0 G
+11
+#1000
+01
+#1500
+1)
+1'
+1-
+1/
+b1 G
+11
+#1700
+b110 2
+b110 4
+b110 A
+b110 C
+#2000
+0D
+0:
+b0xxxxxxxx $
+b0 9
+b0 <
+b0 >
+b110 8
+b110 ?
+b110 B
+0%
+0!
+b1000 5
+b1000 =
+01
+#2500
+1(
+0)
+0'
+0-
+0/
+b10 G
+11
+#2700
+b100 2
+b100 4
+b100 A
+b100 C
+#3000
+0F
+0&
+x%
+b100 $
+b100 7
+b100 E
+01
+#3500
+1,
+1"
+1#
+0(
+b101 G
+11
+#4000
+b10 $
+b10 7
+b10 E
+0%
+b111 5
+b111 =
+01
+#4500
+11
+#5000
+1F
+1&
+b110 5
+b110 =
+b1 $
+b1 7
+b1 E
+01
+#5500
+b11111010 6
+b11111010 ;
+b11111010 @
+0,
+0"
+0#
+00
+1*
+b100 G
+11
+#6000
+b11110100 6
+b11110100 ;
+b11110100 @
+1:
+b1111101000000001 $
+b11111010 9
+b11111010 <
+b11111010 >
+1%
+01
+#6500
+1,
+1"
+1#
+0*
+b101 G
+11
+#7000
+0F
+0&
+b11110111 6
+b11110111 ;
+b11110111 @
+1D
+b101 5
+b101 =
+b0 7
+b0 E
+b1111110100000000 $
+b11111101 9
+b11111101 <
+b11111101 >
+01
+#7500
+b11 6
+b11 ;
+b11 @
+0,
+0"
+0#
+10
+1*
+b11 G
+11
+#8000
+b1001 6
+b1001 ;
+b1001 @
+0:
+b1100000000 $
+b11 9
+b11 <
+b11 >
+0%
+01
+#8500
+1,
+1"
+1#
+0*
+b101 G
+11
+#9000
+b111 6
+b111 ;
+b111 @
+b100 5
+b100 =
+b10000000 7
+b10000000 E
+b110000000 $
+b1 9
+b1 <
+b1 >
+01
+#9500
+11
+#10000
+b110 6
+b110 ;
+b110 @
+0D
+b0 9
+b0 <
+b0 >
+b11000000 $
+b11000000 7
+b11000000 E
+b11 5
+b11 =
+01
+#10500
+11
+#11000
+b10 5
+b10 =
+b1100000 $
+b1100000 7
+b1100000 E
+01
+#11500
+11
+#12000
+b110000 $
+b110000 7
+b110000 E
+b1 5
+b1 =
+01
+#12500
+11
+#13000
+1!
+b0 5
+b0 =
+b11000 $
+b11000 7
+b11000 E
+01
+#13500
+0"
+0#
+0,
+1+
+b110 G
+11
+#14000
+01
+#14500
+11
+#15000
+01
+#15500
+11
+#16000
+01
+#16500
+11
+#17000
+01
+#17500
+11
+#18000
+01
+#18500
+11
+#19000
+01
+#19500
+11
+#20000
+01
