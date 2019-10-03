@@ -8,9 +8,9 @@ module d_flop(
 );
 
 input d, clk, clr;
-output q;
+output reg q;
 
-always @(posedge clk)
+always @(negedge clk)
 begin
     if (clr)
         q <= 0;

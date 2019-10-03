@@ -39,9 +39,9 @@ begin
              else state <= S5;
       S3:    state <= S5;
       S4:    state <= S5;
-      S5:    if(({q0,qd}==2'b01) && (stop==0)) state <= S3;
-             else if(({q0,qd}==2'b10) && (stop==0)) state <= S4;
-             else if(stop!=0) state <= S6;
+      S5:    if(({q0,qd}==2'b01) && (!stop)) state <= S3;
+             else if(({q0,qd}==2'b10) && (!stop)) state <= S4;
+             else if(stop) state <= S6;
       S6:    state <= S6;
       default:    state <= S0;
     endcase
@@ -70,7 +70,7 @@ begin
           ldA=0; ldQ=0; sftA=1; sftQ=1; decount=1;
       end
       S6: begin
-          done=1;
+          done=1; decount=0; sftA=0; sftQ=0;
       end
       default: begin
           clrA=0; sftA=0; ldQ=0; sftQ=0;

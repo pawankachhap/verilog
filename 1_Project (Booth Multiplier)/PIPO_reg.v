@@ -15,7 +15,7 @@ input clk, load;
 
 output reg [N-1:0] data_out;
 
-always @(posedge clk)
+always @(negedge clk)
 begin
     if(load)
         data_out <= data_in;

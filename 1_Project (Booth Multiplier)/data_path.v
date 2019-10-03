@@ -30,7 +30,7 @@ parameter N = 8;
 input [N-1:0] data_in;
 input clk, ldA, clrA, sftA;
 input ldQ, clrQ, sftQ;
-input ldM, clrff, addsub, ldcount;
+input ldM, clrff, addsub, ldcount,decount;
 
 output stop, q0, qd;
 
@@ -38,6 +38,7 @@ wire [N-1:0] A,M,Z,Q;
 wire [3:0] count;
 
 assign stop = ~|count;    //to check when count reaches 4'b0000
+assign q0 = Q[0];         //q0 gives the LSB of Q(Multiplier)
 
 shiftreg AR(.data_out(A),.data_in(Z),.serial_in(A[N-1]),.clk(clk),.load(ldA),.clear(clrA),.shift(sftA));
 shiftreg QR(.data_out(Q),.data_in(data_in),.serial_in(A[0]),.clk(clk),.load(ldQ),.clear(clrQ),.shift(sftQ));

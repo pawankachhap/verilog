@@ -7,7 +7,7 @@ module shiftreg(
     clk,
     load,
     clear,
-    shfit
+    shift
 );
 
 parameter N = 8;
@@ -16,14 +16,14 @@ input [N-1:0] data_in;
 input serial_in;
 input clk, load, clear, shift;
 
-output reg [N-1] data_out;
+output reg [N-1:0] data_out;
 
-always @(posedge clk)
+always @(negedge clk)
 begin
-    if (clr) data_out <= 0;                       //initializing the register
-    else if (ld) data_out <= data_in;             //loading the register
-    else if(sft)
-        data_out <= {serial_in,data_out[15:1]};   //arithmetic right shift
+    if (clear) data_out <= 0;                       //initializing the register
+    else if (load) data_out <= data_in;             //loading the register
+    else if(shift)
+        data_out <= {serial_in,data_out[N-1:1]};   //arithmetic right shift
 end
 
 endmodule

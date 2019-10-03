@@ -13,7 +13,7 @@ parameter M = 8;    //Number of steps in the Booth's algorithn
 input clk, load, dec;
 output reg [N:0] count;
 
-always @(posedge clk)
+always @(negedge clk)
 begin
     if (load)
         count <= M;
