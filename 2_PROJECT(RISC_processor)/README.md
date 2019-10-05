@@ -12,8 +12,6 @@ Compilation and simulation is done using Icarus Verilog
 * For Windows Users to simulate the compiled file :
     `vvp <output-file>`
 
-* An output file is provided named ./out which can be directly simulated
-
 **Tools used**
 * Icarus-Verilog
 * GTKWAVE
