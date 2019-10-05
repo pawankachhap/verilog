@@ -66,7 +66,7 @@ begin
     if (HALTED == 0)
     begin
         if (((EX_MEM_IR[31:26] == BEQZ) && (EX_MEM_Cond == 1)) || 
-             (EX_MEM_IR[31:26] == BNEQZ) && (EX_MEM_Cond == 0))
+             ((EX_MEM_IR[31:26] == BNEQZ) && (EX_MEM_Cond == 0)))
             begin
                 IF_ID_IR     <= #2 Mem[EX_MEM_ALUout];
                 BRANCH_TAKEN <= #2 1'b1;
@@ -87,7 +87,7 @@ always @(posedge clk2)
 begin
     if (HALTED == 0)
         begin
-            if (IF_ID_IR[25:21] == 5'b00000) ID_EX_A = 0;
+            if (IF_ID_IR[25:21] == 5'b00000) ID_EX_A <= 0;
             else
                 ID_EX_A <= #2 Reg[IF_ID_IR[25:21]];  // rs
 
@@ -100,13 +100,13 @@ begin
             ID_EX_Imm <= #2 {{16{IF_ID_IR[15]}},{IF_ID_IR[15:0]}};
 
           case(IF_ID_IR[31:26])
-            ADD,SUB,AND,OR,SLT,MUL : #2 ID_EX_type <= RR_ALU;
-            ADDI,SUBI,SLTI         : #2 ID_EX_type <= RM_ALU;
-            LW                     : #2 ID_EX_type <= LOAD;
-            SW                     : #2 ID_EX_type <= STORE;
-            BNEQZ,BEQZ             : #2 ID_EX_type <= BRANCH;
-            HLT                    : #2 ID_EX_type <= HALT;
-            default                : #2 ID_EX_type <= HALT;  //invalid opcode
+            ADD,SUB,AND,OR,SLT,MUL : ID_EX_type <= #2 RR_ALU;
+            ADDI,SUBI,SLTI         : ID_EX_type <= #2 RM_ALU;
+            LW                     : ID_EX_type <= #2 LOAD;
+            SW                     : ID_EX_type <= #2 STORE;
+            BNEQZ,BEQZ             : ID_EX_type <= #2 BRANCH;
+            HLT                    : ID_EX_type <= #2 HALT;
+            default                : ID_EX_type <= #2 HALT;  //invalid opcode
           endcase
         end
 end
@@ -137,7 +137,7 @@ begin
                         ADDI  : EX_MEM_ALUout <= #2 ID_EX_A + ID_EX_Imm;
                         SUBI  : EX_MEM_ALUout <= #2 ID_EX_A - ID_EX_Imm;
                         SLTI  : EX_MEM_ALUout <= #2 ID_EX_A < ID_EX_Imm;
-                        default: EX_MEM_ALUout <= #2 32'bxxxxxxxx;
+                        default: EX_MEM_ALUout <= #2 32'hxxxxxxxx;
                       endcase
                     end 
             LOAD,STORE: begin
@@ -160,13 +160,13 @@ begin
         MEM_WB_IR <= #2 EX_MEM_IR;
         MEM_WB_type <= #2 EX_MEM_type;
 
-        case (MEM_WB_type)
-          RR_ALU,RM_ALU  : #2 MEM_WB_ALUout <= EX_MEM_ALUout;
+        case (EX_MEM_type)
+          RR_ALU,RM_ALU  : MEM_WB_ALUout <= #2 EX_MEM_ALUout;
 
-          LOAD           : #2 MEM_WB_LMD <= #2 Mem[EX_MEM_ALUout];
+          LOAD : #2 MEM_WB_LMD <= #2 Mem[EX_MEM_ALUout];
 
-          STORE          : if (BRANCH_TAKEN == 0)
-                               MEM_WB_LMD <= #2 EX_MEM_B;
+          STORE : if (BRANCH_TAKEN == 0)
+                    Mem[EX_MEM_ALUout] <= #2 EX_MEM_B;
         endcase
     end
 end
